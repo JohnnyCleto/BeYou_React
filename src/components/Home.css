@@ -1,211 +1,40 @@
-*{
-  font-family: arial, sans-serif;
-  margin: 0 auto; /*As margens são usadas para criar espaço ao redor dos elementos, fora de quaisquer bordas definidas. (fora)*/
-  padding: 0; /*padding = preenchimento. (dentro)
-  Cria espaço ao redor do conteúdo de um elemento, dentro de quaisquer bordas definidas.*/
-  box-sizing: border-box; /*o tamanho agora levará em conta até a borda.
-  ou seja, o width será a soma do conteúdo com a borda e o padding*/
-}
-
-body{
-  background-color: #FFC9E9;
-}
-
-header{
-  background-image: url('./img/Textura_Rosa.jpg');
-
-  background-position: center;
-  background-repeat: no-repeat; /*a imagem de fundo não se repetir*/
-  background-size: cover; /*a imagem de fundo cobrir todo o contêiner.*/
-  position: relative; /*define a posição como relativa para posicionar elementos internos de forma absoluta.*/
-  color: #6c4539;
-  padding: 20px;
-  display: flex; /*conteiner manipulavel*/
-  align-items: center;
+header {
+  display: flex;
   justify-content: space-between;
-  border: 0.5px solid #6c4539;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
 
-.logocontainer{
-  display: flex;
-  align-items: left;
+.logocontainer img {
+  height: 50px;
 }
-.img_logo{
-  width: 80px;
-  height: auto;
+
+.menu_icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+}
+
+.img_perfil {
+  height: 40px;
   border-radius: 50%;
-  margin-right: 800px;
-  align-items: center;
-  border: 2px solid #6c4539;
-  cursor: pointer;
+  margin-right: 1rem;
 }
 
-.tres{
-  color: #6c4539;
-  cursor: pointer;
-}
-.tres:hover{
-  color: #5E17EB;
-}
-.menuicon{
-  height: 100%;
-  width: 0px;
-  position: fixed;
-  z-index: 1; /*fica no topo*/
-  top: 0;
-  left: 0;
-  background-color: #6c4539;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: width 0.5s ease; /* Transição para suavizar a abertura/fechamento */
-}
-.menuicon a{
-  padding: 5px 5px 5px 35px;
-  text-decoration: none;
-  font-size: 30px;
-  color: white;
-  font-weight: bold;
-  display: block;
-  transition: filter 0.3s ease;
-}
-.menuicon a:hover{
-  color: #5E17EB;
-  cursor: pointer;
-}
-.menuicon .fecharmenu{
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 50px;
-}
-
-.perfil{
-  margin-right: 0;
-  display: flex;
-}
-.img_perfil{
-  width: 80px;
-  height: auto;
-  border-radius: 50%; /*deixa a imagem redonda*/
-  transition: filter 0.3s ease;
-  border: 2px solid #6c4539;
-  align-items: center;
-  margin-right: 20px;
-}
-.img_perfil:hover {
-  filter: grayscale(100%);
-  border-color: black;
-}
-.botao_perfil{
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: 15px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: 0px;
-  transition: color 0.3s ease;
-  list-style-type: none;
-  color: black;
-  background-color: #fd99d5;
-  border: solid 2px #6c4539;
-  margin-bottom: 2px;
-  opacity: 0.8;
-  font-size: 20px;
-  border-radius: 20px;
-}
-.botao_perfil:hover{
-  background-color: #FFC9E9;
-  border: solid 2px #6c4539;
+.botao_perfil {
+  background-color: #f45bf4;
+  border: none;
+  padding: 0.5rem 1rem;
   color: white;
   cursor: pointer;
+  border-radius: 50px;
 }
 
-h1{
-  text-align: left;
-  color: #6c4539;
-  font-style: bold;
-  list-style: none;
-  font-size: 40px;
-  margin-bottom: 20px;
-  margin-left: 50px;
-  margin-top: 20px;
+.botao_perfil:hover {
+  background-color: hsl(300, 99%, 64%);
 }
-.promocao_lugares{
-  margin-top: 50px;
-  overflow: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.promocao_lugares img {
-  margin-bottom: 10px;
-  width: 300px;
-  height: 300px;
-  margin-left: 20px;
-  border-radius: 20%;
-}
-.img1, .img2, .img3, .img4, .img5, .img6, .img7{
-  border: solid 2px #6c4539;
-}
-.img1:hover, .img2:hover, .img3:hover, .img4:hover, .img5:hover, .img6:hover, .img7:hover{
-  filter: brightness(0.8);
-  border: solid 2px #ff9a6e;
-  cursor: pointer;
-}
-
-.logos_empresas{
-  margin-top: 50px;
-  overflow: auto;
-  white-space: nowrap;
-  scrollbar-width: none; 
-}
-.logos_empresas img{
-  vertical-align: middle;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  width: 200px;
-  height: 200px;
-  margin-left: 20px;
-}
-
-.voce_sabia{
-  margin-top: 50px;
-  overflow: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.voce_sabia img{
-  margin-bottom: 10px;
-  width: 300px;
-  height: 300px;
-  margin-left: 20px;
-  border-radius: 20%;
-}
-
-.promocao_produtos{
-  margin-top: 50px;
-  overflow: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
-}
-.promocao_produtos img{
-  margin-bottom: 10px;
-  width: 300px;
-  height: 300px;
-  margin-left: 20px;
-  border-radius: 20%;
-}
-
-.footer{
-  background-color: #b699f1;
-  display: flex;
-  color: #6c4539;
-  padding: 20px;
-  display: flex; /*conteiner manipulavel*/
-  align-items: center;
-  justify-content: space-between;
-  border: 5px solid #6c4539;
-}
-

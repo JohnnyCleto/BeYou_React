@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';  // Correct import for useNavigate
 import './RegisterForm.css';
 
+
 const RegisterForm = () => {
   const navigate = useNavigate();
 

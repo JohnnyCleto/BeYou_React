@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Correct import for useNavigate
+import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 
 const LoginForm = () => {
@@ -11,9 +11,9 @@ const LoginForm = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (email && password) {
-      navigate('/'); // Correct usage of navigate
+      navigate('/'); // Redireciona para a página inicial
     } else {
-      alert('Please fill in both fields');
+      alert('Por favor, preencha todos os campos.');
     }
   };
 
@@ -24,25 +24,31 @@ const LoginForm = () => {
         <label htmlFor="email"><b>Email</b></label>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Digite seu email"
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        
-        <label htmlFor="password"><b>Password</b></label>
+
+        <label htmlFor="password"><b>Senha</b></label>
         <input
           type="password"
-          placeholder="Enter your password"
+          placeholder="Digite sua senha"
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        
-        <button type="submit" className="login-button">Login</button>
+
+        <button type="submit" className="botao_login">Entrar</button>
       </form>
+      <button
+        className="botao_cadastrar"
+        onClick={() => navigate('/register')}
+      >
+        Cadastre-se
+      </button>
     </div>
   );
 };

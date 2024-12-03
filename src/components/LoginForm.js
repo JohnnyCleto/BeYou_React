@@ -34,7 +34,6 @@ const LoginForm = () => {
       alignItems: 'center',
     },
     formulario: {
-      position: 'absolute',
       maxWidth: '400px',
       padding: '20px',
       backgroundColor: 'rgba(251, 251, 251, 0.591)',
@@ -42,6 +41,8 @@ const LoginForm = () => {
       border: 'solid 1px #6c4539',
       borderRadius: '30px',
       textAlign: 'center',
+      position: 'absolute',
+      right: 10,
     },
     input: {
       width: '90%',

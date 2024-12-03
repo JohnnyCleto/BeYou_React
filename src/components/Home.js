@@ -145,11 +145,11 @@ const Home = () => {
             <img className="img_perfil" style={imgPerfilStyle} src={require('./img/perfil.eu.jpg')} alt="eu" />
           </a>
         </div>
-<<<<<<< Updated upstream
+<<<<<<< upstream
 =======
         
       </header>
->>>>>>> Stashed changes
+>>>>>>> Stashed chan Updatedges
 
     </header>
       <div id="menu" style={menuStyle}>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';  // Correct import for useNavigate
+import { useNavigate } from 'react-router-dom';  // Importação correta do useNavigate
 import './RegisterForm.css';
-
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -10,6 +9,7 @@ const RegisterForm = () => {
     <div className="background_img">
       <form className="formulario">
         <h1>Cadastro</h1>
+        
         <label htmlFor="nome"><b>Nome</b></label>
         <input type="text" placeholder="Digite seu nome" name="nome" required />
 
@@ -29,7 +29,14 @@ const RegisterForm = () => {
           </label>
         </div>
 
-        <button type="button" className="botao_cadastrar" onClick={() => navigate('/login')}>Cadastrar</button>
+        {/* Botão para cadastrar e redirecionar para a página inicial */}
+        <button
+          type="button"
+          className="botao_cadastrar"
+          onClick={() => navigate('/home')} // Ajuste na rota
+        >
+          Cadastrar
+        </button>
       </form>
     </div>
   );

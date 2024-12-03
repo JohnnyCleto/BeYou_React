@@ -11,26 +11,29 @@ const LoginForm = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (email && password) {
-      navigate('/'); // Redireciona para a página inicial
+      navigate('/home'); // Redireciona para a página "Home"
     } else {
       alert('Por favor, preencha todos os campos.');
     }
   };
 
+  const handleRegister = () => {
+    navigate('/cadastrar'); // Redireciona para a página "RegisterForm"
+  };
+
   return (
-    <div className="login-form">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+    <div className="background_img">
+      <form className="formulario" onSubmit={handleLogin}>
+        <h1>Login</h1>
         <label htmlFor="email"><b>Email</b></label>
         <input
-          type="email"
+          type="text"
           placeholder="Digite seu email"
           name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-
         <label htmlFor="password"><b>Senha</b></label>
         <input
           type="password"
@@ -40,15 +43,14 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-
+        <div>
+          <a href="#" className="esqueci_senha">Esqueci minha senha</a>
+        </div>
         <button type="submit" className="botao_login">Entrar</button>
+        <button type="button" className="botao_cadastrar" onClick={handleRegister}>
+          Cadastrar
+        </button>
       </form>
-      <button
-        className="botao_cadastrar"
-        onClick={() => navigate('/register')}
-      >
-        Cadastre-se
-      </button>
     </div>
   );
 };

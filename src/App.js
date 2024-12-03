@@ -13,10 +13,13 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/Cadastrar" element={<RegisterForm />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
+

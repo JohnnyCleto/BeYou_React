@@ -9,8 +9,10 @@ const Home = () => {
     document.getElementById("menu").style.width = "0";
   };
 
+  const BodyStyle = {backgroundColor: '#FFC9E9'}
+
   const headerStyle = {
-    backgroundImage: 'url("img/Textura_Rosa.jpg")',
+    backgroundImage: 'url("/img/Textura_Rosa.jpg")',  // Corrected path
     minHeight: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -93,7 +95,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={BodyStyle}>
       <header style={headerStyle}>
         <div className="logocontainer">
           <img

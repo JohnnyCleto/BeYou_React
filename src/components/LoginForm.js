@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import backgroundImg from './img/background_img.jpg';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const LoginForm = () => {
 
   const styles = {
     background_img: {
-      backgroundImage: "url('/img/background_img.jpg')",
+      backgroundImage: `url(${backgroundImg})`,
       minHeight: '100vh',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -33,12 +34,13 @@ const LoginForm = () => {
       alignItems: 'center',
     },
     formulario: {
-      maxWidth: '500px',
+      position: 'absolute',
+      maxWidth: '400px',
       padding: '20px',
-      backgroundColor: 'white',
+      backgroundColor: 'rgba(251, 251, 251, 0.591)',
       color: 'black',
-      border: 'solid 2px #6c4539',
-      borderRadius: '10px',
+      border: 'solid 1px #6c4539',
+      borderRadius: '30px',
       textAlign: 'center',
     },
     input: {

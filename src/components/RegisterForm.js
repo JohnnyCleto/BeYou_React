@@ -9,7 +9,7 @@ const styles = {
     boxSizing: 'border-box',
   },
   backgroundImg: {
-    backgroundImage: "url('./img/background_img.jpg')",
+    backgroundImage: `url(${require('./img/background_img.jpg')})`,
     minHeight: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -23,9 +23,10 @@ const styles = {
     margin: '35px 150px 35px 35px',
     maxWidth: '500px',
     padding: '20px',
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(251, 251, 251, 0.591)',
     color: 'black',
     border: '2px solid #6c4539',
+    borderRadius: '30px',
   },
   h1: {
     marginBottom: '10px',

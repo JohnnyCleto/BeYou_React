@@ -2,17 +2,19 @@ import React from 'react';
 
 const Home = () => {
   const abrirMenu = () => {
-    document.getElementById("menu").style.width = "250px";
+    document.getElementById('menu').style.width = '300px';
+    document.getElementById('menu').style.boxShadow = '5px 0 15px rgba(0, 0, 0, 0.5)';
   };
 
   const fecharMenu = () => {
-    document.getElementById("menu").style.width = "0";
+    document.getElementById('menu').style.width = '0';
+    document.getElementById('menu').style.boxShadow = 'none';
   };
 
   const BodyStyle = {backgroundColor: '#FFC9E9'}
 
   const headerStyle = {
-    backgroundImage: 'url("/img/Textura_Rosa.jpg")',  // Corrected path
+    backgroundImage: 'url("/img/Textura_Rosa.jpg")',
     minHeight: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -30,8 +32,7 @@ const Home = () => {
     width: '80px',
     height: 'auto',
     borderRadius: '50%',
-    marginRight: '800px',
-    alignItems: 'center',
+    marginRight: '20px',
     border: '2px solid #6c4539',
     cursor: 'pointer',
   };
@@ -44,20 +45,38 @@ const Home = () => {
     top: '0',
     left: '0',
     backgroundColor: '#6c4539',
+    color: '#fff',
     overflowX: 'hidden',
+    transition: 'width 0.4s ease-in-out, box-shadow 0.4s ease-in-out',
+    display: 'flex',
+    flexDirection: 'column',
     paddingTop: '60px',
-    transition: 'width 0.5s ease',
   };
 
   const linkStyle = {
-    padding: '5px 5px 5px 35px',
+    padding: '15px 20px',
     textDecoration: 'none',
-    fontSize: '30px',
+    fontSize: '20px',
     color: 'white',
     fontWeight: 'bold',
     display: 'block',
-    transition: 'filter 0.3s ease',
+    transition: 'color 0.3s ease',
   };
+
+  const linkHoverStyle = {
+    color: 'hsl(300, 99%, 64%)',
+  };
+
+  const fecharMenuStyle = {
+    fontSize: '30px',
+    position: 'absolute',
+    top: '20px',
+    right: '25px',
+    cursor: 'pointer',
+    color: 'white',
+    transition: 'color 0.3s ease',
+  };
+ 
 
   const imgPerfilStyle = {
     width: '80px',
@@ -68,7 +87,7 @@ const Home = () => {
     alignItems: 'center',
     marginRight: '20px',
   };
-
+  
   const imgStyle = {
     marginBottom: '10px',
     width: '300px',
@@ -96,36 +115,81 @@ const Home = () => {
 
   return (
     <div style={BodyStyle}>
-      <header style={headerStyle}>
-        <div className="logocontainer">
-          <img
-            id="logoLink"
-            className="img_logo"
-            style={logoStyle}
-            src={require('./img/logo_fio_roxo.jpg')}
-            alt="Logo"
-          />
-        </div>
-        <span className="tres" onClick={abrirMenu}>
-          &#9776;
-        </span>
-        <div className="perfil">
+    <header style={headerStyle}>
+      <img
+        id="logoLink"
+        style={logoStyle}
+        src={require('./img/logo_fio_roxo.jpg')}
+        alt="Logo"
+      />
+    <span
+        className="menuToggle"
+        onClick={abrirMenu}
+        style={{
+          fontSize: '30px',
+          cursor: 'pointer',
+          color: '#6c4539',
+          position: 'absolute',
+          right: 140,
+        }}
+      >
+        &#9776;
+    </span>
+
+      <div className="perfil">
           <a href="perfil.html" id="perfilLink">
             <img className="img_perfil" style={imgPerfilStyle} src={require('./img/perfil.eu.jpg')} alt="eu" />
           </a>
         </div>
-        <button className="botao_perfil">Seu perfil</button>
-      </header>
 
-      <div id="menu" className="menuicon" style={menuStyle}>
-        <a href="javascript:void(0)" className="fecharmenu" onClick={fecharMenu}>
+    </header>
+      <div id="menu" style={menuStyle}>
+        <span
+          onClick={fecharMenu}
+          style={fecharMenuStyle}
+        >
           &times;
+        </span>
+        <a
+          href="#imagens_passar"
+          style={linkStyle}
+          onMouseOver={(e) => (e.target.style.color = linkHoverStyle.color)}
+          onMouseOut={(e) => (e.target.style.color = 'white')}
+        >
+          Início
         </a>
-        <a href="#imagens_passar" style={linkStyle}>Inicio</a>
-        <a href="meu_carinho.html" style={linkStyle}>Meu Carrinho</a>
-        <a href="campo_de_pesquisa.html" style={linkStyle}>Pesquisar</a>
-        <a href="agendamentos.html" style={linkStyle}>Agendamentos</a>
-        <a href="minha_loja.html" style={linkStyle}>Minha Loja</a>
+        <a
+          href="meu_carinho.html"
+          style={linkStyle}
+          onMouseOver={(e) => (e.target.style.color = linkHoverStyle.color)}
+          onMouseOut={(e) => (e.target.style.color = 'white')}
+        >
+          Meu Carrinho
+        </a>
+        <a
+          href="campo_de_pesquisa.html"
+          style={linkStyle}
+          onMouseOver={(e) => (e.target.style.color = linkHoverStyle.color)}
+          onMouseOut={(e) => (e.target.style.color = 'white')}
+        >
+          Pesquisar
+        </a>
+        <a
+          href="agendamentos.html"
+          style={linkStyle}
+          onMouseOver={(e) => (e.target.style.color = linkHoverStyle.color)}
+          onMouseOut={(e) => (e.target.style.color = 'white')}
+        >
+          Agendamentos
+        </a>
+        <a
+          href="minha_loja.html"
+          style={linkStyle}
+          onMouseOver={(e) => (e.target.style.color = linkHoverStyle.color)}
+          onMouseOut={(e) => (e.target.style.color = 'white')}
+        >
+          Minha Loja
+        </a>
       </div>
 
       <main>

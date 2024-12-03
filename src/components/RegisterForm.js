@@ -9,7 +9,7 @@ const styles = {
     boxSizing: 'border-box',
   },
   backgroundImg: {
-    backgroundImage: `url(${require('./img/background_img.jpg')})`,
+    backgroundImage: "url('./img/background_img.jpg')",
     minHeight: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',

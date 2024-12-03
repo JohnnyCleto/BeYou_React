@@ -31,7 +31,7 @@ const styles = {
     marginBottom: '10px',
   },
   input: {
-    width: '100%',
+    width: '95%',
     padding: '15px',
     margin: '5px 0 10px 0',
     border: '1px solid #6c4539',

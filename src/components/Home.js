@@ -1,4 +1,5 @@
 import React from 'react';
+import backgroundImg from './img/Textura_Rosa.jpg';
 
 const Home = () => {
   const abrirMenu = () => {
@@ -14,7 +15,7 @@ const Home = () => {
   const BodyStyle = {backgroundColor: '#FFC9E9'}
 
   const headerStyle = {
-    backgroundImage: 'url("/img/Textura_Rosa.jpg")',
+    backgroundImage: `url(${backgroundImg})`,
     minHeight: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',

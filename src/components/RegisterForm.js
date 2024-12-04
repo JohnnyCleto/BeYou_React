@@ -7,7 +7,7 @@ const RegisterForm = () => {
   const navigate = useNavigate(); // Permite navegação programática entre páginas
 
   // Estado para gerenciar o hover no botão e os dados do formulário
-  const [hovered, setHovered] = useState(false); // Controla o efeito visual no botão
+  const [hovered, setHovered] = useState(false);  // Controla o efeito visual no botão
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,20 +17,21 @@ const RegisterForm = () => {
 
   // Atualiza o estado conforme o usuário digita nos campos
   const handleChange = (e) => {
-    const { name, value } = e.target; // Extrai o nome e o valor do campo
-    setFormData((prevData) => ({ ...prevData, [name]: value })); // Atualiza apenas o campo alterado
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // Valida e processa o envio do formulário
-  const handleRegister = (e) => {
-    e.preventDefault(); // Evita o comportamento padrão de recarregar a página
-    if (formData.password !== formData.confirmPassword) {
-      alert('As senhas não coincidem.'); // Verifica se as senhas coincidem
-      return;
-    }
-    alert('Cadastro realizado com sucesso!'); // Mensagem de sucesso
-    navigate('/home'); // Redireciona para a página inicial
-  };
+    // Valida e processa o envio do formulário
+    const handleRegister = (e) => {
+      e.preventDefault();
+      if (formData.password !== formData.confirmPassword) {
+        alert('As senhas não coincidem.');
+        return;
+      }
+      alert('Cadastro realizado com sucesso!');
+      navigate('/home');
+    };
+
 
   // Estilos inline para os elementos do formulário
   const styles = {
@@ -176,6 +177,7 @@ const RegisterForm = () => {
         >
           Cadastrar
         </button>
+
       </form>
     </div>
   );

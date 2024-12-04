@@ -1,4 +1,5 @@
-import React from 'react'; // Importa o React para construir o componente
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import backgroundImg from './img/Textura_Rosa.jpg'; // Importa a imagem de fundo para o cabeçalho
 
 // Componente principal da página inicial

@@ -178,6 +178,7 @@ const RegisterForm = () => {
         >
           Cadastrar
         </button>
+        
       </form>
     </div>
   );

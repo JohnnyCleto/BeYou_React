@@ -9,7 +9,7 @@ const LoginForm = () => {
   // Estados para armazenar email e senha digitados pelo usuário
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [hovered, setHovered] = useState(false); // Estado para controle de hover do botão
+  const [hoveredButton, setHoveredButton] = useState(null); // Estado para controle de hover do botão
 
   // Função para tratar o evento de login ao submeter o formulário
   const handleLogin = (e) => {
@@ -45,10 +45,9 @@ const LoginForm = () => {
       maxWidth: '400px',
       width: '90%',
       padding: '20px',
-      backgroundColor: 'rgba(251, 251, 251, 0.591)',
+      backgroundColor: 'white',
       color: 'black',
       border: 'solid 1px #6c4539',
-      borderRadius: '30px',
       textAlign: 'center',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       position: 'absolute',
@@ -58,8 +57,8 @@ const LoginForm = () => {
       // Estilo das labels (texto descritivo dos campos)
       display: 'block',
       textAlign: 'left',
-      marginBottom: '5px',
-      marginTop: '15px',
+      marginBottom: '0px',
+      marginTop: '0px',
       fontSize: '15px',
       color: '#6c4539',
     },
@@ -73,7 +72,6 @@ const LoginForm = () => {
       borderRadius: '50px',
     },
     botao: {
-      // Estilo dos botões de login e cadastro
       backgroundColor: '#f45bf4',
       color: 'white',
       padding: '10px 20px',
@@ -84,8 +82,14 @@ const LoginForm = () => {
       borderRadius: '50px',
       marginTop: '10px',
       transition: 'opacity 0.3s ease',
-      opacity: hovered ? 1 : 0.8, // Alteração de opacidade com hover
     },
+    botaoHover: {
+      opacity: 5,
+    },
+    botaoNormal: {
+      opacity: 0.8,
+    },
+
     link: {
       // Estilo do link para a página de recuperação de senha
       color: '#f45bf4',
@@ -139,18 +143,24 @@ const LoginForm = () => {
         {/* Botão de login */}
         <button
           type="submit"
-          style={styles.botao}
-          onMouseOver={() => setHovered(true)} // Define hover para true ao passar o mouse
-          onMouseOut={() => setHovered(false)} // Retorna hover para false ao remover o mouse
+          style={{
+            ...styles.botao,
+            ...(hoveredButton === 'login' ? styles.botaoHover : styles.botaoNormal),
+          }}
+          onMouseOver={() => setHoveredButton('login')}
+          onMouseOut={() => setHoveredButton(null)}
         >
           Entrar
         </button>
-
-        {/* Botão para redirecionar ao cadastro */}
         <button
           type="button"
-          style={styles.botao}
-          onClick={handleRegister} // Chama a função de redirecionamento para cadastro
+          style={{
+            ...styles.botao,
+            ...(hoveredButton === 'register' ? styles.botaoHover : styles.botaoNormal),
+          }}
+          onClick={handleRegister}
+          onMouseOver={() => setHoveredButton('register')}
+          onMouseOut={() => setHoveredButton(null)}
         >
           Cadastrar
         </button>

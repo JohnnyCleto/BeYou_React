@@ -42,6 +42,8 @@ const RegisterForm = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundRepeat: 'no-repeat',
+
     },
     formulario: {
       // Estilo do contêiner do formulário
@@ -53,24 +55,9 @@ const RegisterForm = () => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       position: 'absolute',
       right: '200px',
-    },
-    label: {
-      // Estilo das labels dos campos
-      display: 'block',
-      textAlign: 'left',
-      marginBottom: '0px',
-      marginTop: '0px',
-      fontSize: '15px',
-      color: '#6c4539',
-      textAlign: 'center', },
+      color: 'black',
+      textAlign: 'center',
 
-    input: {
-      width: '90%',
-      padding: '15px',
-      margin: '10px 0',
-      border: '1px solid #6c4539',
-      borderRadius: '50px',
-      backgroundColor: '#ffecfc',
     },
     label: {
       // Estilo das labels (texto descritivo dos campos)
@@ -80,7 +67,18 @@ const RegisterForm = () => {
       marginTop: '0px',
       fontSize: '15px',
       color: '#6c4539',
+      alignItems: 'center', 
     },
+
+    input: {
+      width: '90%',
+      padding: '15px',
+      margin: '10px 0',
+      border: '1px solid #6c4539',
+      borderRadius: '50px',
+      backgroundColor: '#ffecfc',
+    },
+    
     botao: {
       backgroundColor: '#f45bf4',
       color: 'white',
@@ -178,7 +176,6 @@ const RegisterForm = () => {
         >
           Cadastrar
         </button>
-        
       </form>
     </div>
   );

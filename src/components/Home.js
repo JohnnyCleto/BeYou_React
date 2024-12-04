@@ -1,9 +1,5 @@
 import React from 'react';
 import backgroundImg from './img/Textura_Rosa.jpg';
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 const Home = () => {
   const abrirMenu = () => {
     document.getElementById('menu').style.width = '300px';
@@ -145,11 +141,6 @@ const Home = () => {
             <img className="img_perfil" style={imgPerfilStyle} src={require('./img/perfil.eu.jpg')} alt="eu" />
           </a>
         </div>
-<<<<<<< upstream
-=======
-        
-      </header>
->>>>>>> Stashed chan Updatedges
 
     </header>
       <div id="menu" style={menuStyle}>
@@ -199,15 +190,6 @@ const Home = () => {
         >
           Minha Loja
         </a>
-<<<<<<< Updated upstream
-=======
-        <a href="#imagens_passar" style={linkStyle}>Inicio</a>
-        <a href="meu_carinho.html" style={linkStyle}>Meu Carrinho</a>
-        <a href="campo_de_pesquisa.html" style={linkStyle}>Pesquisar</a>
-        <a href="agendamentos.html" style={linkStyle}>Agendamentos</a>
-        <a href="minha_loja.html" style={linkStyle}>Minha Loja</a>
-        <a href="Perfil.html" style={linkStyle}>Perfil</a>
->>>>>>> Stashed changes
       </div>
 
       <main>

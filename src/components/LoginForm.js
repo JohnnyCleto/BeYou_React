@@ -96,7 +96,8 @@ const LoginForm = () => {
       textDecoration: 'none',
       fontSize: '14px',
       display: 'block',
-      marginTop: '10px',
+      marginTop: '5px',
+      marginbottom: '5px',
       textAlign: 'center',
     },
   };
@@ -136,7 +137,7 @@ const LoginForm = () => {
         />
 
         {/* Link para recuperação de senha */}
-        <a href="/termos" style={styles.link}>
+        <a href="/identificar" style={styles.link}>
           Esqueceu a Senha?
         </a>
 

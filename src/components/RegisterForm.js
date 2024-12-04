@@ -51,7 +51,7 @@ const RegisterForm = () => {
       border: '1px solid #6c4539',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       textAlign: 'center',
-      
+
     },
     label: { margin: '5px 0', fontSize: '15px', color: '#6c4539' },
     input: {
@@ -145,7 +145,6 @@ const RegisterForm = () => {
         <div>
           <input type="checkbox" id="concordo" required />
           <label htmlFor="concordo">
-            Li e concordo com os{' '}
             <a href="/termos" style={styles.link}>
             </a>
           </label>

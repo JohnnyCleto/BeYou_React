@@ -4,29 +4,26 @@ import backgroundImg from './img/background_img.jpg';
 
 // Componente funcional LoginForm para a página de login
 const LoginForm = () => {
-  const navigate = useNavigate(); // Hook para navegação entre rotas
+  const navigate = useNavigate();
 
-  // Estados para armazenar email e senha digitados pelo usuário
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [hovered, setHovered] = useState(false); // Estado para controle de hover do botão
+  const [hoveredLogin, setHoveredLogin] = useState(false); // Estado para hover do botão "Entrar"
+  const [hoveredRegister, setHoveredRegister] = useState(false); // Estado para hover do botão "Cadastrar"
 
-  // Função para tratar o evento de login ao submeter o formulário
   const handleLogin = (e) => {
-    e.preventDefault(); // Previne o comportamento padrão do formulário
+    e.preventDefault();
     if (email && password) {
-      // Se ambos os campos estão preenchidos, redireciona para a página home
       navigate('/home');
     } else {
-      alert('Por favor, preencha todos os campos.'); // Exibe alerta caso algum campo esteja vazio
+      alert('Por favor, preencha todos os campos.');
     }
   };
 
-  // Função para redirecionar o usuário para a página de cadastro
   const handleRegister = () => {
     navigate('/cadastrar');
   };
-
+  
   // Estilos inline para os elementos da interface
   const styles = {
     background_img: {
@@ -74,7 +71,6 @@ const LoginForm = () => {
       borderRadius: '50px',
     },
     botao: {
-      // Estilo dos botões de login e cadastro
       backgroundColor: '#f45bf4',
       color: 'white',
       padding: '10px 20px',
@@ -85,9 +81,14 @@ const LoginForm = () => {
       borderRadius: '50px',
       marginTop: '10px',
       transition: 'opacity 0.3s ease',
-      opacity: hovered ? 1 : 0.8, // Alteração de opacidade com hover
     },
-    link: {
+    botaoLogin: {
+      opacity: hoveredLogin ? 1 : 0.8, // Hover específico para o botão "Entrar"
+    },
+    botaoRegister: {
+      opacity: hoveredRegister ? 1 : 0.8, // Hover específico para o botão "Cadastrar"
+    },
+     link: {
       // Estilo do link para a página de recuperação de senha
       color: '#f45bf4',
       textDecoration: 'none',
@@ -138,21 +139,23 @@ const LoginForm = () => {
           Esqueceu a Senha?
         </a>
 
-        {/* Botão de login */}
-        <button
+       {/* Botão de login */}
+       <button
           type="submit"
-          style={styles.botao}
-          onMouseOver={() => setHovered(true)} // Define hover para true ao passar o mouse
-          onMouseOut={() => setHovered(false)} // Retorna hover para false ao remover o mouse
+          style={{ ...styles.botao, ...styles.botaoLogin }}
+          onMouseOver={() => setHoveredLogin(true)}
+          onMouseOut={() => setHoveredLogin(false)}
         >
           Entrar
         </button>
 
-        {/* Botão para redirecionar ao cadastro */}
+        {/* Botão de cadastro */}
         <button
           type="button"
-          style={styles.botao}
-          onClick={handleRegister} // Chama a função de redirecionamento para cadastro
+          style={{ ...styles.botao, ...styles.botaoRegister }}
+          onMouseOver={() => setHoveredRegister(true)}
+          onMouseOut={() => setHoveredRegister(false)}
+          onClick={handleRegister}
         >
           Cadastrar
         </button>

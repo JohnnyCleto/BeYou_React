@@ -35,14 +35,24 @@ const LoginForm = () => {
     },
     formulario: {
       maxWidth: '400px',
+      width: '90%',
       padding: '20px',
       backgroundColor: 'rgba(251, 251, 251, 0.591)',
       color: 'black',
       border: 'solid 1px #6c4539',
       borderRadius: '30px',
       textAlign: 'center',
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       position: 'absolute',
-      right: 10,
+      right: '200px'
+    },
+    label: {
+      display: 'block',
+      textAlign: 'left',
+      marginBottom: '5px',
+      marginTop: '15px',
+      fontSize: '15px',
+      color: '#6c4539',
     },
     input: {
       width: '90%',
@@ -62,7 +72,16 @@ const LoginForm = () => {
       fontSize: '16px',
       borderRadius: '50px',
       marginTop: '10px',
+      transition: 'opacity 0.3s ease',
       opacity: hovered ? 1 : 0.8,
+    },
+    link: {
+      color: '#f45bf4',
+      textDecoration: 'none',
+      fontSize: '14px',
+      display: 'block',
+      marginTop: '10px',
+      textAlign: 'center',
     },
   };
 
@@ -70,7 +89,12 @@ const LoginForm = () => {
     <div style={styles.background_img}>
       <form style={styles.formulario} onSubmit={handleLogin}>
         <h1>Login</h1>
+
+        <label htmlFor="email" style={styles.label}>
+          <b>E-mail:</b>
+        </label>
         <input
+          id="email"
           type="text"
           placeholder="Digite seu email"
           value={email}
@@ -78,7 +102,12 @@ const LoginForm = () => {
           required
           style={styles.input}
         />
+
+        <label htmlFor="password" style={styles.label}>
+        <b>Senha:</b>
+        </label>
         <input
+          id="password"
           type="password"
           placeholder="Digite sua senha"
           value={password}
@@ -86,6 +115,11 @@ const LoginForm = () => {
           required
           style={styles.input}
         />
+
+        <a href="/termos" style={styles.link}>
+          Esqueceu a Senha?
+        </a>
+
         <button
           type="submit"
           style={styles.botao}
@@ -94,6 +128,7 @@ const LoginForm = () => {
         >
           Entrar
         </button>
+
         <button
           type="button"
           style={styles.botao}

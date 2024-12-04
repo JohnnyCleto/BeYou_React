@@ -32,7 +32,7 @@ const RegisterForm = () => {
       borderRadius: '30px',
       textAlign: 'center',
       position: 'absolute',
-      right: 10,
+      right: '150px',
     },
     input: {
       width: '90%',

@@ -184,18 +184,46 @@ const Home = () => {
 
       {/* Seções principais */}
       <main>
-        {/* Promoções de serviços */}
         <div className="promocao_lugares" style={promocaoLugaresStyle}>
           <h1>Promoções de Serviços</h1>
-          {['promocao1.jpg', 'promocao2.jpg', 'promocao3.jpeg'].map((src, index) => (
-            <img key={index} className="img" style={imgStyle} src={require(`./img/${src}`)} alt="" />
-          ))}
+          <img className="img1" style={imgStyle} src={require('./img/promocao1.jpg')} alt="alongamento_unha" />
+          <img className="img2" style={imgStyle} src={require('./img/promocao2.jpg')} alt="progressiva" />
+          <img className="img3" style={imgStyle} src={require('./img/promocao3.jpeg')} alt="corte" />
+          <img className="img4" style={imgStyle} src={require('./img/promoçao4.jpg')} alt="tranças" />
+          <img className="img5" style={imgStyle} src={require('./img/promocao5.jpeg')} alt="massagem" />
+        </div>
+
+        <div className="promocao_produtos" style={promocaoLugaresStyle}>
+          <h1>Promoções de Produtos</h1>
+          <img className="img1" style={imgStyle} src={require('./img/promocao_produto1.jpg')} alt="" />
+          <img className="img2" style={imgStyle} src={require('./img/promocao_produto2.jpg')} alt="" />
+          <img className="img3" style={imgStyle} src={require('./img/promocao_produto3.jpg')} alt="" />
+          <img className="img3" style={imgStyle} src={require('./img/Promocao_produto4.jpg')} alt="" />
+        </div>
+
+        <div className="logos_empresas" style={promocaoLugaresStyle}>
+          <h1>Lojas em destaque</h1>
+          <img className="img1" style={imgStyle} src={require('./img/loja1.jpg')} alt="" />
+          <img className="img2" style={imgStyle} src={require('./img/loja2.jpg')} alt="" />
+          <img className="img3" style={imgStyle} src={require('./img/loja3.jpg')} alt="" />
+          <img className="img4" style={imgStyle} src={require('./img/loja4.jpg')} alt="" />
+          <img className="img5" style={imgStyle} src={require('./img/loja5.jpg')} alt="" />
+          <img className="img6" style={imgStyle} src={require('./img/loja6.jpg')} alt="" />
+          <img className="img7" style={imgStyle} src={require('./img/loja7.jpg')} alt="" />
+        </div>
+
+        <div className="voce_sabia" style={promocaoLugaresStyle}>
+          <h1>Você sabia...?</h1>
+          <img className="img1" style={imgStyle} src={require('./img/voce_sabia1.jpg')} alt="" />
+          <img className="img2" style={imgStyle} src={require('./img/voce_sabia2.jpg')} alt="" />
+          <img className="img3" style={imgStyle} src={require('./img/voce_sabia3.jpg')} alt="" />
+          <img className="img4" style={imgStyle} src={require('./img/voce_sabia4.jpg')} alt="" />
+          <img className="img5" style={imgStyle} src={require('./img/voce_sabia5.jpg')} alt="" />
         </div>
       </main>
 
-      {/* Rodapé */}
       <footer style={footerStyle}>
-        <div>Rodapé</div>
+        <div className="footer"></div>
       </footer>
     </div>
   );

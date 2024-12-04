@@ -45,7 +45,7 @@ const LoginForm = () => {
       maxWidth: '400px',
       width: '90%',
       padding: '20px',
-      backgroundColor: 'rgba(251, 251, 251, 0.591)',
+      backgroundColor: 'white',
       color: 'black',
       border: 'solid 1px #6c4539',
       borderRadius: '30px',

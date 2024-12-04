@@ -44,16 +44,28 @@ const RegisterForm = () => {
       alignItems: 'center',
     },
     formulario: {
-      maxWidth: '425px',
+      // Estilo do contêiner do formulário
+      maxWidth: '400px',
       width: '90%',
-      padding: '10px',
+      padding: '20px',
       backgroundColor: 'white',
-      border: '1px solid #6c4539',
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      color: 'black',
+      border: 'solid 1px #6c4539',
       textAlign: 'center',
-
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      position: 'absolute',
+      right: '200px',
     },
-    label: { margin: '5px 0', fontSize: '15px', color: '#6c4539' },
+    label: {
+      // Estilo das labels dos campos
+      display: 'block',
+      textAlign: 'left',
+      marginBottom: '0px',
+      marginTop: '0px',
+      fontSize: '15px',
+      color: '#6c4539',
+      textAlign: 'center', },
+
     input: {
       width: '90%',
       padding: '15px',
@@ -61,6 +73,15 @@ const RegisterForm = () => {
       border: '1px solid #6c4539',
       borderRadius: '50px',
       backgroundColor: '#ffecfc',
+    },
+    label: {
+      // Estilo das labels (texto descritivo dos campos)
+      display: 'block',
+      textAlign: 'left',
+      marginBottom: '0px',
+      marginTop: '0px',
+      fontSize: '15px',
+      color: '#6c4539',
     },
     botao: {
       backgroundColor: '#f45bf4',
@@ -83,7 +104,7 @@ const RegisterForm = () => {
 
         {/* Campo para o nome */}
         <label htmlFor="name" style={styles.label}>
-          Nome:
+         <b> Nome:</b>
         </label>
         <input
           id="name"
@@ -98,7 +119,7 @@ const RegisterForm = () => {
 
         {/* Campo para o e-mail */}
         <label htmlFor="email" style={styles.label}>
-          E-mail:
+          <b>E-mail:</b>
         </label>
         <input
           id="email"
@@ -113,7 +134,7 @@ const RegisterForm = () => {
 
         {/* Campo para a senha */}
         <label htmlFor="password" style={styles.label}>
-          Senha:
+           <b>Senha:</b>
         </label>
         <input
           id="password"
@@ -128,7 +149,7 @@ const RegisterForm = () => {
 
         {/* Campo para confirmar a senha */}
         <label htmlFor="confirmPassword" style={styles.label}>
-          Confirme sua Senha:
+           <b>Confirme sua Senha:</b>
         </label>
         <input
           id="confirmPassword"
@@ -145,7 +166,7 @@ const RegisterForm = () => {
         <div>
           <input type="checkbox" id="concordo" required />
           <label htmlFor="concordo">
-            <a href="/termos" style={styles.link}>
+            <a href="/termos" style={styles.link}>Li e concordo com os termos de uso{' '}
             </a>
           </label>
         </div>

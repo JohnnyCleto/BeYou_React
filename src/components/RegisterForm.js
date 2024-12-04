@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import backgroundImg from './img/background_img.jpg';
+import React, { useState } from 'react'; // Importa React e o hook useState para gerenciar estados
+import { useNavigate } from 'react-router-dom'; // Importa o hook useNavigate para navegação
+import backgroundImg from './img/background_img.jpg'; // Importa a imagem de fundo
 
-// Componente funcional RegisterForm para um formulário de cadastro
+// Componente funcional para o formulário de cadastro
 const RegisterForm = () => {
-  // useNavigate é usado para navegação programática entre páginas
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Permite navegação programática entre páginas
 
-  // Estado para gerenciar o hover (efeito de opacidade no botão)
-  const [hovered, setHovered] = useState(false);
-
-  // Estado para armazenar os dados do formulário
+  // Estado para gerenciar o hover no botão e os dados do formulário
+  const [hovered, setHovered] = useState(false); // Controla o efeito visual no botão
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,111 +15,75 @@ const RegisterForm = () => {
     confirmPassword: '',
   });
 
-  // Função que atualiza os dados do formulário conforme o usuário digita
+  // Atualiza o estado conforme o usuário digita nos campos
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const { name, value } = e.target; // Extrai o nome e o valor do campo
+    setFormData((prevData) => ({ ...prevData, [name]: value })); // Atualiza apenas o campo alterado
   };
 
-  // Função que valida e processa o envio do formulário
+  // Valida e processa o envio do formulário
   const handleRegister = (e) => {
-    e.preventDefault(); // Previne o comportamento padrão de recarregar a página
+    e.preventDefault(); // Evita o comportamento padrão de recarregar a página
     if (formData.password !== formData.confirmPassword) {
-      alert('As senhas não coincidem.'); // Alerta caso as senhas não coincidam
+      alert('As senhas não coincidem.'); // Verifica se as senhas coincidem
       return;
     }
-    alert('Cadastro realizado com sucesso!'); // Exibe mensagem de sucesso
-    navigate('/home'); // Redireciona o usuário para a página inicial
+    alert('Cadastro realizado com sucesso!'); // Mensagem de sucesso
+    navigate('/home'); // Redireciona para a página inicial
   };
 
-  // Estilos inline para os elementos da interface
+  // Estilos inline para os elementos do formulário
   const styles = {
     background_img: {
-      // Fundo do formulário com uma imagem
-      backgroundImage: `url(${backgroundImg})`,
+      backgroundImage: `url(${backgroundImg})`, // Adiciona imagem de fundo
       minHeight: '100vh',
       backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     },
     formulario: {
-      // Estilo do formulário
       maxWidth: '425px',
       width: '90%',
       padding: '10px',
       backgroundColor: 'white',
-      color: 'black',
-      border: 'solid 1px #6c4539',
-      textAlign: 'center',
+      border: '1px solid #6c4539',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      position: 'absolute',
-      right: '200px',
+      textAlign: 'center',
+      
     },
-    label: {
-      // Estilo das labels dos campos
-      display: 'block',
-      textAlign: 'left',
-      marginBottom: '0px',
-      marginTop: '0px',
-      fontSize: '15px',
-      color: '#6c4539',
-    },
+    label: { margin: '5px 0', fontSize: '15px', color: '#6c4539' },
     input: {
-      // Estilo dos inputs (campos de texto e senha)
       width: '90%',
       padding: '15px',
       margin: '10px 0',
       border: '1px solid #6c4539',
-      backgroundColor: '#ffecfc',
       borderRadius: '50px',
-    },
-    checkboxContainer: {
-      // Contêiner para o checkbox
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: '10px',
-    },
-    checkboxInput: {
-      // Estilo do checkbox
-      marginRight: '8px',
+      backgroundColor: '#ffecfc',
     },
     botao: {
-      // Estilo do botão de cadastro
       backgroundColor: '#f45bf4',
       color: 'white',
       padding: '10px 20px',
-      border: 'solid 2px #6c4539',
+      border: '2px solid #6c4539',
       cursor: 'pointer',
       width: '60%',
-      fontSize: '16px',
       borderRadius: '50px',
-      marginTop: '10px',
-      transition: 'opacity 0.3s ease',
-      opacity: hovered ? 1 : 0.8, // Efeito de hover
+      opacity: hovered ? 1 : 0.8, // Altera opacidade no hover
     },
-    link: {
-      // Estilo dos links
-      color: '#f45bf4',
-      textDecoration: 'none',
-      fontSize: '14px',
-      marginTop: '10px',
-      textAlign: 'center',
-    },
+    link: { color: '#f45bf4', textDecoration: 'none', fontSize: '14px' },
   };
 
-  // Estrutura do formulário com JSX
+  // Estrutura do formulário
   return (
     <div style={styles.background_img}>
       <form style={styles.formulario} onSubmit={handleRegister}>
         <h1>Cadastro</h1>
 
-        {/* Campo Nome */}
+        {/* Campo para o nome */}
         <label htmlFor="name" style={styles.label}>
-          <b>Nome:</b>
+          Nome:
         </label>
         <input
           id="name"
@@ -135,9 +96,9 @@ const RegisterForm = () => {
           style={styles.input}
         />
 
-        {/* Campo E-mail */}
+        {/* Campo para o e-mail */}
         <label htmlFor="email" style={styles.label}>
-          <b>E-mail:</b>
+          E-mail:
         </label>
         <input
           id="email"
@@ -150,9 +111,9 @@ const RegisterForm = () => {
           style={styles.input}
         />
 
-        {/* Campo Senha */}
+        {/* Campo para a senha */}
         <label htmlFor="password" style={styles.label}>
-          <b>Senha:</b>
+          Senha:
         </label>
         <input
           id="password"
@@ -165,9 +126,9 @@ const RegisterForm = () => {
           style={styles.input}
         />
 
-        {/* Campo Confirmar Senha */}
+        {/* Campo para confirmar a senha */}
         <label htmlFor="confirmPassword" style={styles.label}>
-          <b>Confirme sua Senha:</b>
+          Confirme sua Senha:
         </label>
         <input
           id="confirmPassword"
@@ -180,27 +141,21 @@ const RegisterForm = () => {
           style={styles.input}
         />
 
-        {/* Checkbox para termos de uso */}
-        <div style={styles.checkboxContainer}>
-          <input
-            type="checkbox"
-            id="concordo"
-            required
-            style={styles.checkboxInput}
-          />
+        {/* Checkbox para os termos de uso */}
+        <div>
+          <input type="checkbox" id="concordo" required />
           <label htmlFor="concordo">
             Li e concordo com os{' '}
             <a href="/termos" style={styles.link}>
-              termos de uso
             </a>
           </label>
         </div>
 
-        {/* Botão de cadastro */}
+        {/* Botão para submeter o formulário */}
         <button
           type="submit"
           style={styles.botao}
-          onMouseOver={() => setHovered(true)}
+          onMouseOver={() => setHovered(true)} // Efeito hover
           onMouseOut={() => setHovered(false)}
         >
           Cadastrar

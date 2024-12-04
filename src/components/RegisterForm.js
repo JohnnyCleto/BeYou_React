@@ -49,9 +49,7 @@ const RegisterForm = () => {
       width: '90%',
       padding: '20px',
       backgroundColor: 'white',
-      color: 'black',
-      border: 'solid 1px #6c4539',
-      textAlign: 'center',
+      border: '1px solid #6c4539',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
       position: 'absolute',
       right: '200px',
@@ -119,7 +117,7 @@ const RegisterForm = () => {
 
         {/* Campo para o e-mail */}
         <label htmlFor="email" style={styles.label}>
-          <b>E-mail:</b>
+          E-mail:
         </label>
         <input
           id="email"
